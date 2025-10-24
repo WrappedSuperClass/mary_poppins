@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (you can add this when you have a sitemap)
+# Sitemap: https://marypoppins-childcare.com/sitemap.xml
+
+# Allow all search engines to crawl your site
+# This is good for a business website like yours

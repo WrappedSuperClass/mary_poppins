@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-secondary-200;
+  }
+  
+  body {
+    @apply bg-secondary-900 text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-400;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary-600 px-6 py-3 text-sm font-medium text-white shadow-soft transition-all duration-200 hover:bg-primary-700 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-secondary-600 bg-secondary-800 px-6 py-3 text-sm font-medium text-white shadow-soft transition-all duration-200 hover:bg-secondary-700 hover:shadow-medium focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium text-secondary-300 transition-all duration-200 hover:bg-secondary-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply rounded-xl bg-secondary-800 p-6 shadow-soft border border-secondary-700;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+  }
+
+  .input {
+    @apply block w-full rounded-lg border border-secondary-600 bg-secondary-800 px-3 py-2 text-sm text-white placeholder:text-secondary-400 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .heading-xl {
+    @apply text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-lg {
+    @apply text-3xl font-bold tracking-tight text-white sm:text-4xl;
+  }
+
+  .heading-md {
+    @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
+  }
+
+  .heading-sm {
+    @apply text-xl font-semibold tracking-tight text-white;
+  }
+
+  .text-body {
+    @apply text-lg text-secondary-300 leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-base text-secondary-300 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUpFast 0.2s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDownFast 0.2s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Cloud shape for buttons */
+  .cloud-shape {
+    border-radius: 50px 20px 50px 20px / 20px 50px 20px 50px;
+    position: relative;
+  }
+
+  .cloud-shape::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: inherit;
+    border-radius: 60px 25px 60px 25px / 25px 60px 25px 60px;
+    z-index: -1;
+    opacity: 0.3;
+    filter: blur(2px);
+  }
+
+  .cloud-shape::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: inherit;
+    border-radius: 70px 30px 70px 30px / 30px 70px 30px 70px;
+    z-index: -2;
+    opacity: 0.1;
+    filter: blur(4px);
+  }
+
+  /* Parallax specific styles */
+  .parallax-container {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .parallax-bg {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .parallax-clouds {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Smooth scrolling enhancement */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Performance optimizations for parallax */
+  .parallax-optimized {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+
+  /* Fast, smooth dropdown animations (transform-based to avoid blur artifacts) */
+  @keyframes slideDownFast {
+    0% { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUpFast {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    0% { opacity: 0; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Star animations using the three star PNGs - instant transitions for cute cheap effect */
+  @keyframes starAnimation1 {
+    0% { background-image: url('/images/star1.png'); }
+    33.33% { background-image: url('/images/star2.png'); }
+    66.66% { background-image: url('/images/star3.png'); }
+    100% { background-image: url('/images/star1.png'); }
+  }
+
+  @keyframes starAnimation2 {
+    0% { background-image: url('/images/star2.png'); }
+    33.33% { background-image: url('/images/star3.png'); }
+    66.66% { background-image: url('/images/star1.png'); }
+    100% { background-image: url('/images/star2.png'); }
+  }
+
+  @keyframes starAnimation3 {
+    0% { background-image: url('/images/star3.png'); }
+    33.33% { background-image: url('/images/star1.png'); }
+    66.66% { background-image: url('/images/star2.png'); }
+    100% { background-image: url('/images/star3.png'); }
+  }
+
+  /* Mary Poppins floating animation */
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+
+  /* Title animations */
+  @keyframes titleGlow {
+    0%, 100% { 
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                   0 0 40px rgba(255, 255, 255, 0.3),
+                   0 0 60px rgba(255, 255, 255, 0.2);
+    }
+    50% { 
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                   0 0 60px rgba(255, 255, 255, 0.5),
+                   0 0 90px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @keyframes subtitleShimmer {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+  }
+
+  .main-title {
+    animation: titleGlow 3s ease-in-out infinite;
+    font-family: 'Inter', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .subtitle {
+    animation: subtitleShimmer 4s ease-in-out infinite;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Small window and mobile optimizations */
+  @media (max-width: 1024px) {
+    /* Make background image static on small screens and mobile */
+    .static-bg-mobile {
+      width: 1920px !important;
+      height: 1080px !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+    }
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    
+    /* Reduce parallax intensity on mobile for better performance */
+    .parallax-clouds,
+    .parallax-bg {
+      transform: none !important;
+    }
+    
+    /* Simplify animations on mobile */
+    .main-title,
+    .subtitle {
+      animation: none;
+    }
+    
+    /* Optimize star animations for mobile */
+    @keyframes starAnimation1 {
+      0% { background-image: url('/images/star1.png'); }
+      50% { background-image: url('/images/star2.png'); }
+      100% { background-image: url('/images/star1.png'); }
+    }
+
+    @keyframes starAnimation2 {
+      0% { background-image: url('/images/star2.png'); }
+      50% { background-image: url('/images/star1.png'); }
+      100% { background-image: url('/images/star2.png'); }
+    }
+
+    @keyframes starAnimation3 {
+      0% { background-image: url('/images/star3.png'); }
+      50% { background-image: url('/images/star1.png'); }
+      100% { background-image: url('/images/star3.png'); }
+    }
+  }
+
+  /* Performance optimizations */
+  @media (prefers-reduced-motion: reduce) {
+    .parallax-clouds,
+    .parallax-bg,
+    .main-title,
+    .subtitle {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+}
