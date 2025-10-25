@@ -11,12 +11,12 @@
 ## IMPORTANT:
 For the Instagram Section, please emmbed an instagram feed from elfsight.com
 1. **Add this custom scc to the embedding and remove the header, add an autpscroll of 3 seconds**:
-   ```bash
-    .eapps-instagram-feed {
-  border-radius: 20px;
-  overflow: hidden;
-  /* ensures inner corners stay clean */
-   } 
+   ```css
+   .eapps-instagram-feed {
+     border-radius: 20px;
+     overflow: hidden;
+     /* ensures inner corners stay clean */
+   }
    ```
 
 
