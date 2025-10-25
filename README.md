@@ -41,19 +41,31 @@ For the Instagram Section, please emmbed an instagram feed from elfsight.com
 ```
 src/
 ├── app/                    # Next.js App Router
+│   ├── childcare/         # Childcare page route
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
 │   └── page.tsx           # Home page
 ├── components/            # Reusable components
+│   ├── layout/           # Layout components
+│   │   ├── Navigation.tsx
+│   │   └── Section.tsx
+│   ├── sections/         # Page sections
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Founder.tsx
+│   │   ├── Gallery.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Instagram.tsx
+│   │   ├── Press.tsx
+│   │   ├── Reviews.tsx
+│   │   ├── SectionTemplate.tsx
+│   │   └── Services.tsx
 │   ├── ui/               # Base UI components
 │   │   ├── Button.tsx
 │   │   ├── Card.tsx
-│   │   └── Input.tsx
-│   └── sections/         # Page sections
-│       ├── Header.tsx
-│       ├── Hero.tsx
-│       ├── Features.tsx
-│       └── Footer.tsx
+│   │   ├── Input.tsx
+│   │   └── Reveal.tsx
+│   └── ParallaxBackground.tsx
 ├── lib/                  # Utility functions
 │   └── utils.ts
 └── styles/               # Global styles
